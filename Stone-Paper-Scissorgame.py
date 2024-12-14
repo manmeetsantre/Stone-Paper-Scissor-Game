@@ -9,7 +9,7 @@ def game():
     options = ["Stone", "Paper", "Scissors"]
     #initializing inital points of both to 0
     user_points = 0
-    computer_points = 0
+    cpu_points = 0
     #Using conditional statements
     while True:
 
@@ -22,28 +22,28 @@ def game():
             print("Invalid choice. Please choose Stone, Paper, or Scissors.")
             continue
 
-        computer_choice = random.choice(options)
-        print(f"Computer chose: {computer_choice}")
+        cpu_choice = random.choice(options)
+        print(f"CPU chose: {cpu_choice}")
 
-        if user_choice == computer_choice:
+        if user_choice == cpu_choice:
             print("It's a Tie!")
-        elif (user_choice == "Stone" and computer_choice == "Scissors") or \
-             (user_choice == "Scissors" and computer_choice == "Paper") or \
-             (user_choice == "Paper" and computer_choice == "Stone"):
-            print("You Win this round!")
+        elif (user_choice == "Stone" and cpu_choice == "Scissors") or \
+             (user_choice == "Scissors" and cpu_choice == "Paper") or \
+             (user_choice == "Paper" and cpu_choice == "Stone"):
+            print("You Won this round!")
             user_points += 1
         else:
-            print("Computer Wins this round!")
-            computer_points += 1
+            print("CPU Won this round!")
+            cpu_points += 1
 
-        print(f"Score: You - {user_points}, Computer - {computer_points}\n")
+        print(f"Points: You - {user_points}, CPU - {cpu_points}\n")
 
     print("\nGame Over!")
-    print(f"Final Scores: You - {user_points}, Computer - {computer_points}")
-    if user_points > computer_points:
+    print(f"Final Points: You - {user_points}, CPU - {cpu_points}")
+    if user_points > cpu_points:
         print("Congratulations! You won!")
-    elif user_points < computer_points:
-        print("Better luck next time! The computer won.")
+    elif user_points < cpu_points:
+        print("Better luck next time! The cpu won.")
     else:
         print("It's a tie! You may play again.")
 
